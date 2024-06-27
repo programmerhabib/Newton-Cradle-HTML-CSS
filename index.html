@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newton Cradel</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        body{
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: #191825;
+        }
+        .cradel{
+            width: 50rem;
+            height: 50rem;
+            background: transparent;
+            border-top: 2rem solid orange;
+            border-radius: 0.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 4.5rem;
+        }
+        div{
+            width: 0.5rem;
+            height: 20rem;
+            background-color: orange; 
+            position: relative;
+        }
+        .cradel div::before{
+            content: '';
+            position: absolute;
+            top: 90%;
+            left: -2rem;
+            width: 5rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: orange;
+        }
+        .cradel div:first-child{
+            animation: firstCardel 2s linear infinite alternate;
+            transform-origin: top right;
+        }
+        .cradel div:last-child{
+            animation: lastCardel 2s linear infinite alternate;
+            transform-origin: top right;
+        }
+
+        @keyframes firstCardel {
+            0%{
+                rotate: 0deg;
+            }
+            100%{
+                rotate: 30deg;
+            }
+        
+        }
+        
+        @keyframes lastCardel {
+            0%{
+                rotate: 0deg;
+            }
+            100%{
+                rotate: -30deg;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="cradel">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
